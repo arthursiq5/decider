@@ -1,8 +1,9 @@
 <template>
-
-  <component
-    :is="screens[position]"
-  />
+  <div class="container">
+    <component
+      :is="screens[position]"
+    />
+  </div>
 </template>
 
 <script>
