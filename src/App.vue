@@ -2,6 +2,7 @@
   <div class="container">
     <component
       :is="screens[position]"
+      @goto="handleGoto"
     />
   </div>
 </template>
@@ -25,6 +26,11 @@
           'appResults'
         ],
         position: 0,
+      }
+    },
+    methods: {
+      handleGoto(position) {
+        this.position = position
       }
     }
   }
