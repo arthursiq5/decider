@@ -7,7 +7,9 @@
                 name="question"
                 class="form-control"
                 id="question"
+                v-model="question"
             />
+            {{ question }}
         </div>
         <button class="btn">
             Next
@@ -16,6 +18,13 @@
 </template>
 
 <script>
+export default {
+    data() {
+        return {
+            question: ''
+        }
+    }
+}
 
 </script>
 
