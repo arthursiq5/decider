@@ -9,11 +9,18 @@
                 id="question"
                 v-model="question"
             />
-            {{ question }}
         </div>
-        <button class="btn">
+        <button
+            v-if="question"
+            class="btn"
+            @click="handleNext"
+        >
             Next
         </button>
+
+        <div v-if="error" class="error">
+            Question is too short
+        </div>
     </div>
 </template>
 
@@ -21,9 +28,21 @@
 export default {
     data() {
         return {
-            question: ''
+            question: '',
+            error: false,
         }
-    }
+    },
+    methods: {
+        handleNext(e) {
+            e.preventDefault()
+
+            if (this.question.length <= 5) {
+                this.error = true
+            } else {
+                this.error = false
+            }
+        }
+    },
 }
 
 </script>
