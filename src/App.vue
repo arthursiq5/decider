@@ -3,6 +3,7 @@
     <component
       :is="screens[position]"
       @goto="handleGoto"
+      @question="handleQuestion"
     />
   </div>
 </template>
@@ -26,12 +27,16 @@
           'appResults'
         ],
         position: 0,
+        question: '',
       }
     },
     methods: {
       handleGoto(position) {
         this.position = position
-      }
+      },
+      handleQuestion(question) {
+        this.question = question
+      },
     }
   }
 
